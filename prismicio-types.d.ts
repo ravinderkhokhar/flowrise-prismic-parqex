@@ -247,9 +247,85 @@ export type HomepageHeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HomepageHero → Horizontal → Primary*
+ */
+export interface HomepageHeroSliceHorizontalPrimary {
+  /**
+   * Heading field in *HomepageHero → Horizontal → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.horizontal.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *HomepageHero → Horizontal → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.horizontal.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button Text field in *HomepageHero → Horizontal → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.horizontal.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *HomepageHero → Horizontal → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.horizontal.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Image field in *HomepageHero → Horizontal → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.horizontal.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Horizontal variation for HomepageHero Slice
+ *
+ * - **API ID**: `horizontal`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomepageHeroSliceHorizontal = prismic.SharedSliceVariation<
+  "horizontal",
+  Simplify<HomepageHeroSliceHorizontalPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HomepageHero*
  */
-type HomepageHeroSliceVariation = HomepageHeroSliceDefault;
+type HomepageHeroSliceVariation =
+  | HomepageHeroSliceDefault
+  | HomepageHeroSliceHorizontal;
 
 /**
  * HomepageHero Shared Slice
@@ -293,8 +369,10 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       HomepageHeroSlice,
       HomepageHeroSliceDefaultPrimary,
+      HomepageHeroSliceHorizontalPrimary,
       HomepageHeroSliceVariation,
       HomepageHeroSliceDefault,
+      HomepageHeroSliceHorizontal,
     };
   }
 }
