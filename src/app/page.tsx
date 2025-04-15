@@ -9,12 +9,12 @@ import { components } from "@/slices";
 export default async function Home() {
   const client = createClient();
   const page = await client.getSingle("homepage").catch(() => notFound());
-  return (
-    <main>
-            <div className="text-red-500">It Worked !</div>
-    </main>
-  );
-  //return <SliceZone slices={page.data.slices} components={components} />;
+  // return (
+  //   <main>
+  //           <div className="text-red-500">It Worked !</div>
+  //   </main>
+  // );
+  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
