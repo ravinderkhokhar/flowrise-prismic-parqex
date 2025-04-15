@@ -6,7 +6,8 @@ export const Footer = async () => {
   const settings = await client.getSingle("settings")
   return (
     <footer>
-        <Link href="/">©{new Date().getFullYear()} {settings.data.site_title}</Link>
+        <Link href="/">{settings.data.site_title}</Link>
+        <p>©{new Date().getFullYear()} {settings.data.site_title}</p>
         <nav>
             <ul>
                 {settings.data.navigation.map(({link,label})=>(

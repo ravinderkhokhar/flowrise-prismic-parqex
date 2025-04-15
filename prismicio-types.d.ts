@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HomepageHeroSlice;
 
 /**
  * Content for Homepage documents
@@ -172,6 +172,97 @@ export type SettingsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
+/**
+ * Primary content in *HomepageHero → Default → Primary*
+ */
+export interface HomepageHeroSliceDefaultPrimary {
+  /**
+   * Heading field in *HomepageHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Body field in *HomepageHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Button Text field in *HomepageHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *HomepageHero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Image field in *HomepageHero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage_hero.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HomepageHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomepageHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HomepageHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HomepageHero*
+ */
+type HomepageHeroSliceVariation = HomepageHeroSliceDefault;
+
+/**
+ * HomepageHero Shared Slice
+ *
+ * - **API ID**: `homepage_hero`
+ * - **Description**: HomepageHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomepageHeroSlice = prismic.SharedSlice<
+  "homepage_hero",
+  HomepageHeroSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -200,6 +291,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      HomepageHeroSlice,
+      HomepageHeroSliceDefaultPrimary,
+      HomepageHeroSliceVariation,
+      HomepageHeroSliceDefault,
     };
   }
 }

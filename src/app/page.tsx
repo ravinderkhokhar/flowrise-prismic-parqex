@@ -9,7 +9,11 @@ import { components } from "@/slices";
 export default async function Home() {
   const client = createClient();
   const page = await client.getSingle("homepage").catch(() => notFound());
-  return <div className="text-red-500">It Worked !</div>
+  return (
+    <main>
+            <div className="text-red-500">It Worked !</div>
+    </main>
+  );
   //return <SliceZone slices={page.data.slices} components={components} />;
 }
 
