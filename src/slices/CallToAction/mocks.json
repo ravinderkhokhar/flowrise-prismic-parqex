@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Store"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do nisi ut adipisicing in Lorem excepteur excepteur et duis reprehenderit anim velit. Lorem et aliquip veniam eiusmod exercitation adipisicing ut magna ipsum."
+						}
+					}
+				]
+			},
+			"button_link": {
+				"key": "abedf1ba-cd01-424c-b78b-4d5b3c022dd6",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "layers"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "old",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
