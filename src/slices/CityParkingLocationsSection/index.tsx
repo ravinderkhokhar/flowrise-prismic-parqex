@@ -4,22 +4,22 @@ import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismic
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { asText } from "@prismicio/helpers";
-function isStructuredTable(
-  table: unknown
-): table is { rows: { columns: { text?: string }[] }[] } {
-  return (
-    typeof table === "object" &&
-    table !== null &&
-    "rows" in table &&
-    Array.isArray((table as any).rows) &&
-    (table as any).rows.every(
-      (row: any) =>
-        row &&
-        Array.isArray(row.columns) &&
-        row.columns.every((cell: any) => typeof cell === "object" && "text" in cell)
-    )
-  );
-}
+// function isStructuredTable(
+//   table: unknown
+// ): table is { rows: { columns: { text?: string }[] }[] } {
+//   return (
+//     typeof table === "object" &&
+//     table !== null &&
+//     "rows" in table &&
+//     Array.isArray((table as any).rows) &&
+//     (table as any).rows.every(
+//       (row: any) =>
+//         row &&
+//         Array.isArray(row.columns) &&
+//         row.columns.every((cell: any) => typeof cell === "object" && "text" in cell)
+//     )
+//   );
+// }
 
 const components: JSXMapSerializer = {
   heading2:({children})=>(
