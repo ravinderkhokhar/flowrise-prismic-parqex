@@ -2,9 +2,7 @@
 import { JSXMapSerializer, SliceZone, PrismicRichText } from '@prismicio/react';
 import { createClient } from '@/prismicio';
 import { notFound } from 'next/navigation';
-import { asImageSrc } from "@prismicio/client";
 import { Metadata } from 'next';
-import { asText } from '@prismicio/helpers';
 import { components as sliceComponents } from '@/slices';
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
