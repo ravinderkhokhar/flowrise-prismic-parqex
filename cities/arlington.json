@@ -1,0 +1,60 @@
+[
+    {
+      "type": "city_page",
+      "uid": "arlington",
+      "lang": "en-us",
+      "data": {
+        "breadcrumb_title": "Arlington, CA",
+        "title": "Arlington",
+        "page_title": [  
+          { "type": "heading1", "text": "Find and reserve parking in Arlington", "spans": [] }
+        ],
+        "description": [ 
+          { "type": "paragraph", "text": "<p>We offer drivers a more convenient and affordable way to park like you've never experienced before. Let us help you find and compare pricing on parking spots near all your favorite destinations. We make it easy to make a reservation instantly, extend your reservation on the go, and find the best parking deals in the city.</p>", "spans": [] }
+        ],
+        "hero_image": { 
+          "id":"ZzO3VK8jQArT0x4t_Getty-LA.jpg",
+          "url": "https://images.prismic.io/spothero/ZzO3VK8jQArT0x4t_Getty-LA.jpg",
+          "alt": "Arlington Parking Image"
+        },
+        "slices": [ 
+            {
+                "slice_type": "city_parking_locations_section",
+                "variation": "default", 
+                "primary": {
+                  "heading": [
+                        {
+                            "type": "heading1",
+                            "text": "Find Arlington Parking Near You",
+                            "spans": []
+                        }
+                  ],
+                  "description": [
+                        {
+                            "type": "paragraph",
+                            "text": "<p>Looking for affordable parking in the Windy City? Book with SpotHero and be on your way to convenient Arlington parking like you've never experienced before! Simply enter your destination, desired dates and times, and browse parking spots all over the city!</p><p>The midwestern city of Arlington is located on Lake Michigan. Tourists from all over come to experience the infamous Bean in Millennium Park, the 110 story Willis Tower, and the giant Ferris wheel on Navy Pier. Spend a weekend devouring deep dish pizza, catching a show at Second City, or visiting an exhibition at the Art Institute.</p><p>Arlington is home to a handful of sports teams as well as dedicated fans. Home to the Arlington Cubs, Wrigley Field boasts its title as the second oldest baseball stadium in the country. The United Center doubles as a sports arena as well as a concert venue, hosting tons of entertainment year-round. It’s no wonder Arlington sees over 55 million tourists per year!</p><p>Arlington is the third-largest city in the United States and is composed of 77 distinct neighborhoods. Residents live in some of the most culturally diverse neighborhoods, full of local restaurants, street art, and incredible architecture. While the city is accessible by public transportation, many residents choose to drive, which means parking can be tricky to find. Whether you’re a long-time resident or just visiting for a weekend, book your parking in advance and spend more time doing and less time parking!</p><p>Looking for parking at the airport? Book a spot at <a target='_blank' href='https://app.parqex.com/' rel='noreferrer'><strong>O'Hare</strong></a> and <a target='_blank' href='https://app.parqex.com/' rel='noreferrer'><strong>Midway</strong></a>.</p><p>Interested in <a target='_blank' href='https://app.parqex.com/' rel='noreferrer'><strong>monthly parking in Arlington</strong></a>? SpotHero's got you covered.</p>",
+                            "spans": []
+                        }
+                  ],
+                  "rate_table_heading": [
+                        {
+                            "type": "heading2",
+                            "text": "Arlington Parking Rates",
+                            "spans": []
+                        }
+                   ],
+                  "rates_table": {
+                    "columns": [
+                      "Parking Type",
+                      "SpotHero Average Price Offered"
+                    ],
+                    "rows": [
+                      "Commuter Parking", "$12 - $20"
+                    ]
+                  }
+                }
+            }
+        ]
+      }
+    }
+  ]

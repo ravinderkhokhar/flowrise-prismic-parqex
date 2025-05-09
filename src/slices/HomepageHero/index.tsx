@@ -5,7 +5,7 @@ import { PrismicNextImage} from "@prismicio/next";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-
+import SearchHero from "@/components/SearchHero";
 
 const components: JSXMapSerializer = {
   heading1:({children})=>(
@@ -54,6 +54,7 @@ const HomepageHero: FC<HomepageHeroProps> = ({ slice }) => {
                 </div>
                 <PrismicNextImage field={slice.primary.image} className="drop-shadow-xl max-w-1xl" />
               </div>
+              <SearchHero/>              
         </Bounded>
       )} 
     </>

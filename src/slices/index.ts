@@ -4,8 +4,15 @@ import dynamic from "next/dynamic";
 
 export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
+  city_page_parking_section: dynamic(() => import("./CityPageParkingSection")),
+  city_parking_locations_section: dynamic(
+    () => import("./CityParkingLocationsSection"),
+  ),
+  faq: dynamic(() => import("./Faq")),
   features: dynamic(() => import("./Features")),
   homepage_hero: dynamic(() => import("./HomepageHero")),
+  navigation_item: dynamic(() => import("./NavigationItem")),
+  popular_section: dynamic(() => import("./PopularSection")),
   testimonials: dynamic(() => import("./Testimonials")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };

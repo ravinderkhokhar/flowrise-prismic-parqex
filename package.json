@@ -10,13 +10,20 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "@prismicio/client": "^7.17.0",
+    "@prismicio/client": "^7.17.2",
+    "@prismicio/helpers": "^2.3.9",
+    "@prismicio/migrate": "^0.0.2",
     "@prismicio/next": "^2.0.1",
     "@prismicio/react": "^3.2.0",
+    "axios": "^1.9.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "next": "15.2.4",
+    "puppeteer": "^24.8.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-datepicker": "^8.3.0",
+    "react-dom": "^19.0.0",
+    "react-select": "^5.10.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -30,5 +37,18 @@
     "slice-machine-ui": "^2.15.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "importCitiesWithPuppeteer.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravinderkhokhar/flowrise-prismic-parqex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravinderkhokhar/flowrise-prismic-parqex/issues"
+  },
+  "homepage": "https://github.com/ravinderkhokhar/flowrise-prismic-parqex#readme"
 }

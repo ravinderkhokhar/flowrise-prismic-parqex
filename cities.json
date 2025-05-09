@@ -1,0 +1,77 @@
+[
+  {
+    "type": "city_page",
+    "uid": "los-angeles",
+    "lang": "en-us",
+    "data": {
+      "breadcrumb_title": "Los Angeles Parking",
+      "title": "Find Parking in Los Angeles",
+      "page_title": [  
+        { "type": "paragraph", "text": "Los Angeles Parking Guide", "spans": [] }
+      ],
+      "description": [ 
+        { "type": "paragraph", "text": "Reserve the best spots in downtown LA, near LAX, and more. Save time and money.", "spans": [] }
+      ],
+      "hero_image": { 
+        "url": "https://images.prismic.io/spothero/ZzO3VK8jQArT0x4t_Getty-LA.jpg",
+        "alt": "Los Angeles Parking Image"
+      },
+      "slices": [
+        {
+          "slice_type": "rate_table_section",
+          "variation": "default", 
+          "primary": {
+            "heading": [{ "type": "heading1", "text": "Los Angeles Parking Rates", "spans": [] }],
+            "description": [{ "type": "paragraph", "text": "Here's a breakdown of popular parking rates across LA.", "spans": [] }],
+            "rate_table_heading": [{ "type": "heading2", "text": "Hourly & Daily Rates", "spans": [] }],
+            "rates_table": "| Location | Hourly | Daily |\n|----------|--------|--------|\n| Downtown | $5 | $20 |\n| LAX | $7 | $25 |\n| Hollywood | $6 | $22 |"
+          }
+        },
+        {
+          "slice_type": "popular_section",
+          "variation": "default", 
+          "primary": {
+            "popular_heading": [{ "type": "heading2", "text": "Popular Places in LA", "spans": [] }],
+            "items": [
+              { "label": "Downtown LA", "link": { "type": "Link.web", "url": "/neighborhood/downtown-la" } },
+              { "label": "Hollywood", "link": { "type": "Link.web", "url": "/neighborhood/hollywood" } }
+            ]
+          }
+        },
+        {
+          "slice_type": "city_page_parking_section",
+          "variation": "default", 
+          "primary": {
+            "parking_section": [
+              {
+                "heading": [{ "type": "paragraph", "text": "LAX Airport Parking", "spans": [] }],
+                "description": [{ "type": "paragraph", "text": "Find affordable long-term and short-term parking at LAX.", "spans": [] }]
+              },
+              {
+                "heading": [{ "type": "paragraph", "text": "LAX Airport Parking22", "spans": [] }], 
+                "description": [{ "type": "paragraph", "text": "Find affordable long-term and short-term parking at LAX.", "spans": [] }] 
+              }
+            ]
+          }
+        },
+        {
+          "slice_type": "faq_section",
+          "variation": "default", 
+          "primary": {
+            "heading": [{ "type": "heading2", "text": "Frequently Asked Questions", "spans": [] }],
+            "quesans": [
+              {
+                "question": [{ "type": "paragraph", "text": "Where can I find cheap parking in LA?", "spans": [] }],
+                "answer": [{ "type": "paragraph", "text": "Downtown and Hollywood areas offer affordable lots." }]
+              },
+              {
+                "question": [{ "type": "paragraph", "text": "Is there overnight parking at LAX?", "spans": [] }],
+                "answer": [{ "type": "paragraph", "text": "Yes, several garages near LAX allow overnight parking." }]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

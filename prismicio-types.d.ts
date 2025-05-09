@@ -4,6 +4,235 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type CityDocumentDataSlicesSlice = never;
+
+/**
+ * Content for city documents
+ */
+interface CityDocumentData {
+  /**
+   * Breadcrumb Title field in *city*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.breadcrumb_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  breadcrumb_title: prismic.KeyTextField;
+
+  /**
+   * Page Title field in *city*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_title: prismic.RichTextField;
+
+  /**
+   * Description field in *city*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Banner field in *city*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * `slices` field in *city*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CityDocumentDataSlicesSlice> /**
+   * Meta Title field in *city*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *city*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+}
+
+/**
+ * city document from Prismic
+ *
+ * - **API ID**: `city`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CityDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<CityDocumentData>, "city", Lang>;
+
+type CityPageDocumentDataSlicesSlice =
+  | FaqSlice
+  | CityPageParkingSectionSlice
+  | PopularSectionSlice
+  | CityParkingLocationsSectionSlice;
+
+/**
+ * Content for City Page documents
+ */
+interface CityPageDocumentData {
+  /**
+   * State Slug field in *City Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.state_slug
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  state_slug: prismic.KeyTextField;
+
+  /**
+   * Breadcrumb Title field in *City Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.breadcrumb_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  breadcrumb_title: prismic.KeyTextField;
+
+  /**
+   * Title field in *City Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Page Title field in *City Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_title: prismic.RichTextField;
+
+  /**
+   * Description field in *City Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Hero Image field in *City Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *City Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CityPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *City Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *City Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *City Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page.meta_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * City Page document from Prismic
+ *
+ * - **API ID**: `city_page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CityPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CityPageDocumentData>,
+    "city_page",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice =
   | TextWithImageSlice
   | CallToActionSlice
@@ -82,6 +311,102 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     "homepage",
+    Lang
+  >;
+
+/**
+ * Content for listing documents
+ */
+interface ListingDocumentData {
+  /**
+   * Title field in *listing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Banner field in *listing*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * Map field in *listing*
+   *
+   * - **Field Type**: GeoPoint
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.map
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#geopoint
+   */
+  map: prismic.GeoPointField;
+
+  /**
+   * City field in *listing*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.city
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  city: prismic.ContentRelationshipField<"city_page"> /**
+   * Meta Title field in *listing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *listing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *listing*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: listing.meta_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * listing document from Prismic
+ *
+ * - **API ID**: `listing`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ListingDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ListingDocumentData>,
+    "listing",
     Lang
   >;
 
@@ -176,6 +501,8 @@ export interface SettingsDocumentDataNavigationItem {
   label: prismic.KeyTextField;
 }
 
+type SettingsDocumentDataSlicesSlice = NavigationItemSlice;
+
 /**
  * Content for Settings documents
  */
@@ -223,6 +550,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+
+  /**
+   * Slice Zone field in *Settings*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
 
 /**
@@ -307,7 +645,10 @@ export type TestimonialDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | CityDocument
+  | CityPageDocument
   | HomepageDocument
+  | ListingDocument
   | PageDocument
   | SettingsDocument
   | TestimonialDocument;
@@ -392,6 +733,279 @@ export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
 >;
+
+/**
+ * Item in *CityPageParkingSection → Default → Primary → Parking Section*
+ */
+export interface CityPageParkingSectionSliceDefaultPrimaryParkingSectionItem {
+  /**
+   * Heading field in *CityPageParkingSection → Default → Primary → Parking Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page_parking_section.default.primary.parking_section[].heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *CityPageParkingSection → Default → Primary → Parking Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page_parking_section.default.primary.parking_section[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CityPageParkingSection → Default → Primary*
+ */
+export interface CityPageParkingSectionSliceDefaultPrimary {
+  /**
+   * Parking Section field in *CityPageParkingSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_page_parking_section.default.primary.parking_section[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  parking_section: prismic.GroupField<
+    Simplify<CityPageParkingSectionSliceDefaultPrimaryParkingSectionItem>
+  >;
+}
+
+/**
+ * Default variation for CityPageParkingSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CityPageParkingSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CityPageParkingSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CityPageParkingSection*
+ */
+type CityPageParkingSectionSliceVariation = CityPageParkingSectionSliceDefault;
+
+/**
+ * CityPageParkingSection Shared Slice
+ *
+ * - **API ID**: `city_page_parking_section`
+ * - **Description**: CityPageParkingSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CityPageParkingSectionSlice = prismic.SharedSlice<
+  "city_page_parking_section",
+  CityPageParkingSectionSliceVariation
+>;
+
+/**
+ * Item in *CityParkingLocationsSection → Default → Primary → Performers List*
+ */
+export interface CityParkingLocationsSectionSliceDefaultPrimaryPerformersListItem {
+  /**
+   * Performers Name field in *CityParkingLocationsSection → Default → Primary → Performers List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.performers_list[].performers_name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  performers_name: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CityParkingLocationsSection → Default → Primary*
+ */
+export interface CityParkingLocationsSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Rate Table Heading field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.rate_table_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rate_table_heading: prismic.RichTextField;
+
+  /**
+   * Rates Table field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Table
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.rates_table
+   * - **Documentation**: https://prismic.io/docs/field#table
+   */
+  rates_table: prismic.TableField;
+
+  /**
+   * Rate Table Data field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.rate_table_data
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rate_table_data: prismic.RichTextField;
+
+  /**
+   * Performance Heading field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.performance_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  performance_heading: prismic.RichTextField;
+
+  /**
+   * Performers List field in *CityParkingLocationsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: city_parking_locations_section.default.primary.performers_list[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  performers_list: prismic.GroupField<
+    Simplify<CityParkingLocationsSectionSliceDefaultPrimaryPerformersListItem>
+  >;
+}
+
+/**
+ * Default variation for CityParkingLocationsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CityParkingLocationsSectionSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<CityParkingLocationsSectionSliceDefaultPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *CityParkingLocationsSection*
+ */
+type CityParkingLocationsSectionSliceVariation =
+  CityParkingLocationsSectionSliceDefault;
+
+/**
+ * CityParkingLocationsSection Shared Slice
+ *
+ * - **API ID**: `city_parking_locations_section`
+ * - **Description**: CityParkingLocationsSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CityParkingLocationsSectionSlice = prismic.SharedSlice<
+  "city_parking_locations_section",
+  CityParkingLocationsSectionSliceVariation
+>;
+
+/**
+ * Item in *Faq → Default → Primary → QuesAns*
+ */
+export interface FaqSliceDefaultPrimaryQuesansItem {
+  /**
+   * Question field in *Faq → Default → Primary → QuesAns*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.quesans[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faq → Default → Primary → QuesAns*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.quesans[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * Heading field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * QuesAns field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.quesans[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  quesans: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryQuesansItem>>;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
  * Item in *Features → Default → Primary → FeaturesList*
@@ -651,6 +1265,180 @@ export type HomepageHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *NavigationItem → Default → Primary → Children*
+ */
+export interface NavigationItemSliceDefaultPrimaryChildrenItem {
+  /**
+   * Label field in *NavigationItem → Default → Primary → Children*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.children[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *NavigationItem → Default → Primary → Children*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.children[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *NavigationItem → Default → Primary*
+ */
+export interface NavigationItemSliceDefaultPrimary {
+  /**
+   * Label field in *NavigationItem → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *NavigationItem → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Children field in *NavigationItem → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_item.default.primary.children[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  children: prismic.GroupField<
+    Simplify<NavigationItemSliceDefaultPrimaryChildrenItem>
+  >;
+}
+
+/**
+ * Default variation for NavigationItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationItemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NavigationItem*
+ */
+type NavigationItemSliceVariation = NavigationItemSliceDefault;
+
+/**
+ * NavigationItem Shared Slice
+ *
+ * - **API ID**: `navigation_item`
+ * - **Description**: NavigationItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSlice = prismic.SharedSlice<
+  "navigation_item",
+  NavigationItemSliceVariation
+>;
+
+/**
+ * Item in *PopularSection → Default → Primary → Items*
+ */
+export interface PopularSectionSliceDefaultPrimaryItemsItem {
+  /**
+   * Label field in *PopularSection → Default → Primary → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: popular_section.default.primary.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *PopularSection → Default → Primary → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: popular_section.default.primary.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *PopularSection → Default → Primary*
+ */
+export interface PopularSectionSliceDefaultPrimary {
+  /**
+   * Popular Heading field in *PopularSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: popular_section.default.primary.popular_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  popular_heading: prismic.RichTextField;
+
+  /**
+   * Items field in *PopularSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: popular_section.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<
+    Simplify<PopularSectionSliceDefaultPrimaryItemsItem>
+  >;
+}
+
+/**
+ * Default variation for PopularSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PopularSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PopularSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PopularSection*
+ */
+type PopularSectionSliceVariation = PopularSectionSliceDefault;
+
+/**
+ * PopularSection Shared Slice
+ *
+ * - **API ID**: `popular_section`
+ * - **Description**: PopularSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PopularSectionSlice = prismic.SharedSlice<
+  "popular_section",
+  PopularSectionSliceVariation
+>;
+
+/**
  * Item in *Testimonials → Default → Primary → Testimonial*
  */
 export interface TestimonialsSliceDefaultPrimaryTestimonialItem {
@@ -858,15 +1646,24 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CityDocument,
+      CityDocumentData,
+      CityDocumentDataSlicesSlice,
+      CityPageDocument,
+      CityPageDocumentData,
+      CityPageDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      ListingDocument,
+      ListingDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      SettingsDocumentDataSlicesSlice,
       TestimonialDocument,
       TestimonialDocumentData,
       AllDocumentTypes,
@@ -874,6 +1671,21 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CityPageParkingSectionSlice,
+      CityPageParkingSectionSliceDefaultPrimaryParkingSectionItem,
+      CityPageParkingSectionSliceDefaultPrimary,
+      CityPageParkingSectionSliceVariation,
+      CityPageParkingSectionSliceDefault,
+      CityParkingLocationsSectionSlice,
+      CityParkingLocationsSectionSliceDefaultPrimaryPerformersListItem,
+      CityParkingLocationsSectionSliceDefaultPrimary,
+      CityParkingLocationsSectionSliceVariation,
+      CityParkingLocationsSectionSliceDefault,
+      FaqSlice,
+      FaqSliceDefaultPrimaryQuesansItem,
+      FaqSliceDefaultPrimary,
+      FaqSliceVariation,
+      FaqSliceDefault,
       FeaturesSlice,
       FeaturesSliceDefaultPrimaryIconItem,
       FeaturesSliceDefaultPrimary,
@@ -885,6 +1697,16 @@ declare module "@prismicio/client" {
       HomepageHeroSliceVariation,
       HomepageHeroSliceDefault,
       HomepageHeroSliceHorizontal,
+      NavigationItemSlice,
+      NavigationItemSliceDefaultPrimaryChildrenItem,
+      NavigationItemSliceDefaultPrimary,
+      NavigationItemSliceVariation,
+      NavigationItemSliceDefault,
+      PopularSectionSlice,
+      PopularSectionSliceDefaultPrimaryItemsItem,
+      PopularSectionSliceDefaultPrimary,
+      PopularSectionSliceVariation,
+      PopularSectionSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimaryTestimonialItem,
       TestimonialsSliceDefaultPrimary,

@@ -1,0 +1,165 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor velit cupidatat aute exercitation sunt id veniam qui ipsum consectetur. Ex laborum commodo culpa sint commodo irure."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse exercitation veniam deserunt aliqua."
+						}
+					}
+				]
+			},
+			"rate_table_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit deserunt do nostrud. Ea dolor ipsum cillum ipsum eiusmod amet eiusmod do ullamco ea incididunt aliquip. Cillum quis qui ullamco."
+						}
+					}
+				]
+			},
+			"rates_table": {
+				"__TYPE__": "TableContent",
+				"content": [
+					{
+						"key": "8437a026-f567-43b5-b985-56ef043f5005",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "30e06403-1931-46fb-886d-21785abc4690",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit commodo."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "bd611d83-e60e-411d-b1cb-9a50a355772b",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Commodo."
+											}
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"key": "5577685a-cdaa-480e-b2b3-a824ba34f583",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "8a854ce1-0f47-4964-b286-47dc4cebf356",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Culpa consectetur consequat dolore consectetur ut."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "e3bdafaf-f7c2-46ba-8230-0ea1a9942dc7",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est exercitation anim est pariatur proident sunt."
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"performance_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ea id irure Lorem nisi cillum. Dolore id cillum adipisicing in mollit. Tempor cillum reprehenderit consectetur eu nulla tempor irure eu laborum anim anim excepteur velit anim consequat."
+						}
+					}
+				]
+			},
+			"performers_list": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"performers_name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aliqua velit fugiat exercitation eu mollit non velit reprehenderit proident. Et magna ut Lorem fugiat nostrud anim excepteur consectetur nostrud deserunt adipisicing elit amet aliqua. Velit culpa duis consequat sit aliqua adipisicing labore fugiat qui est."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"rate_table_data": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis voluptate non sint non quis velit esse velit cillum sunt nulla occaecat aute consequat. Officia adipisicing labore proident. Exercitation veniam minim mollit nisi consectetur aute fugiat anim nisi tempor veniam."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
