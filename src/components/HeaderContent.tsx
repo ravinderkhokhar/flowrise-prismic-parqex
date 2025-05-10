@@ -6,8 +6,11 @@ import Logos from "@/components/Logos";
 import Bounded from "@/components/Bounded";
 import { SliceZone } from "@prismicio/react";
 import { components } from '@/slices'; // ✅ move here, safe in client
-
-export default function HeaderContent({ settings }: any) {
+import { Content } from "@prismicio/client";
+type HeaderContentProps = {
+  settings: Content.SettingsDocument;
+};
+export default function HeaderContent({ settings }: HeaderContentProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
