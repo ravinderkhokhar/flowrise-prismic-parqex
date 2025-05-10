@@ -8,6 +8,12 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Breadcrumb } from '@/components/Breadcrumb';
 import Image from "next/image";
+import type { SliceComponentProps } from '@prismicio/react';
+import PopularSection, {
+  PopularSectionSlice,
+  PopularSectionProps
+} from "@/slices/PopularSection";
+
 const components: JSXMapSerializer = {
   heading1:({children})=>(
     <Heading as="h1" className="text-[2rem] font-semibold  md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0">{children}</Heading>
@@ -62,13 +68,22 @@ export default async function CityPage( props: { params: { state: string; city: 
         const lastPopularIndex = popularSlices.at(-1)?.index;
 
         if (slice.slice_type === "popular_section") {
-          const PopularSection = sliceComponents[slice.slice_type] as React.FC<any>;
+          //const PopularSection = sliceComponents[slice.slice_type] as React.FC<any>;
+          //const PopularSection = sliceComponents[slice.slice_type] as React.FC<SliceComponentProps<PopularSectionSlice>>;
+          const PopularSection = sliceComponents[slice.slice_type] as React.FC<SliceComponentProps<PopularSectionSlice> & { className?: string }>;
           const isFirst = index === firstPopularIndex;
           const isLast = index === lastPopularIndex;
           const className = `${isFirst ? "lg:py-0 lg:pt-5 lg:pb-0" : ""} ${isLast ? "lg:py-0 lg:pt-8 lg:pb-16" : ""}`.trim();
 
           return (
-            <PopularSection key={index} slice={slice} className={className} />
+            <PopularSection
+              key={index}
+              slice={slice}
+              slices={city.data.slices}
+              index={index}
+              context={undefined}
+              className={className}
+            />
           );
         }
 
