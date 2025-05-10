@@ -11,6 +11,13 @@ import Image from "next/image";
 import type { SliceComponentProps } from '@prismicio/react';
 import type { PopularSectionSlice } from "@/slices/PopularSection";
 
+type Props = {
+  params: {
+    state: string;
+    city: string;
+  };
+};
+
 const components: JSXMapSerializer = {
   heading1:({children})=>(
     <Heading as="h1" className="text-[2rem] font-semibold  md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0">{children}</Heading>
@@ -25,7 +32,9 @@ const components: JSXMapSerializer = {
     <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">{children}</p>
   ),
 };
-export default async function CityPage( props: { params: { state: string; city: string } }) {
+//export default async function CityPage( props: { params: { state: string; city: string } }) {
+  //const params = await props.params;
+export default async function CityPage(props: Props) {
   const params = await props.params;
   const { city: citySlug } = params; // rename the slug
   const client = createClient();
