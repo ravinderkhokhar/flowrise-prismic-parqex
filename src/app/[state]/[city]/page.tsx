@@ -9,10 +9,7 @@ import Heading from "@/components/Heading";
 import { Breadcrumb } from '@/components/Breadcrumb';
 import Image from "next/image";
 import type { SliceComponentProps } from '@prismicio/react';
-import PopularSection, {
-  PopularSectionSlice,
-  PopularSectionProps
-} from "@/slices/PopularSection";
+import type { PopularSectionSlice } from "@/slices/PopularSection";
 
 const components: JSXMapSerializer = {
   heading1:({children})=>(
