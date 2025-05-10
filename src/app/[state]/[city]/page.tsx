@@ -7,7 +7,7 @@ import { components as sliceComponents } from '@/slices';
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Breadcrumb } from '@/components/Breadcrumb';
-
+import Image from "next/image";
 const components: JSXMapSerializer = {
   heading1:({children})=>(
     <Heading as="h1" className="text-[2rem] font-semibold  md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0">{children}</Heading>
@@ -40,7 +40,14 @@ export default async function CityPage( props: { params: { state: string; city: 
           </div>
           <div>
             {city.data.hero_image?.url && (
-              <img src={city.data.hero_image.url} alt="" className="w-full rounded-3xl shadow-md" />
+              // <img src={city.data.hero_image.url} alt="" className="w-full rounded-3xl shadow-md" />
+              <Image
+                src={city.data.hero_image.url}
+                alt={city.data.hero_image.alt || ""}
+                width={800}
+                height={400}
+                className="rounded-xl shadow"
+              />
             )}
           </div>
         </div>

@@ -5,6 +5,7 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Metadata } from "next";
 import { JSXMapSerializer } from "@prismicio/react";
+import Image from "next/image";
 
 type Params = {
   city: string;
@@ -46,7 +47,9 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <>
-      <img src={listingDoc.data.banner.url || ""} alt={listingDoc.data.banner.alt || ""} />
+      {/* <img src={listingDoc.data.banner.url || ""} alt={listingDoc.data.banner.alt || ""} /> */}
+      <Image src={listingDoc.data.banner.url || ""} alt={listingDoc.data.banner.alt || ""}
+  width={800} height={500} className="w-full rounded-3xl shadow-md" />
       <Bounded>
         <div>
           <h1>{listingDoc.data.title}</h1>
