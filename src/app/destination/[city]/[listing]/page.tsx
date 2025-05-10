@@ -2,26 +2,26 @@ import { createClient } from "@/prismicio"; // adjust this path as needed
 import { notFound } from "next/navigation";
 import { asImageSrc, Content } from "@prismicio/client";
 import Bounded from "@/components/Bounded";
-import Heading from "@/components/Heading";
+//import Heading from "@/components/Heading";
 import { Metadata } from "next";
-import { JSXMapSerializer } from "@prismicio/react";
+//import { JSXMapSerializer } from "@prismicio/react";
 import Image from "next/image";
 
 type Params = {
   city: string;
   listing: string;
 };
-const components: JSXMapSerializer = {
-  heading2:({children})=>(
-    <Heading as="h2" size="md" className="text-center mb-12">{children}</Heading>
-  ),
-  heading3:({children})=>(
-    <Heading as="h3" size="sm" className="text-center mb-3 font-medium sm:text-left text-center">{children}</Heading>
-  ),
-  paragraph:({children})=>(
-    <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">{children}</p>
-  ),
-}
+// const components: JSXMapSerializer = {
+//   heading2:({children})=>(
+//     <Heading as="h2" size="md" className="text-center mb-12">{children}</Heading>
+//   ),
+//   heading3:({children})=>(
+//     <Heading as="h3" size="sm" className="text-center mb-3 font-medium sm:text-left text-center">{children}</Heading>
+//   ),
+//   paragraph:({children})=>(
+//     <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">{children}</p>
+//   ),
+// }
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const { city, listing } = await params;
